@@ -43,7 +43,7 @@
     "lint": "eslint . --ext=ts",
     "format": "prettier --check \"./**/*.{ts,md}\"",
     "format:fix": "prettier --write \"./**/*.{ts,md}\"",
-    "prepare": "pnpm build && pnpm lint && pnpm test"
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@commitlint/cli": "12.1.4",
