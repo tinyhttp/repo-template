@@ -14,9 +14,9 @@ Description.
 pnpm i pkg
 ```
 
-[npm-url]: https://npmjs.com/package/lru-send
-[github-actions]: https://github.com/tinyhttp/lru-send/actions
-[gh-actions-img]: https://img.shields.io/github/workflow/status/tinyhttp/tinyhttp/CI?style=for-the-badge&logo=github&label=
-[cov-img]: https://img.shields.io/coveralls/github/tinyhttp/lru-send?style=for-the-badge
-[cov-url]: https://coveralls.io/github/tinyhttp/lru-send
-[npm-img]: https://img.shields.io/npm/dt/lru-send?style=for-the-badge
+[npm-url]: https://npmjs.com/package/@tinyhttp/favicon
+[github-actions]: https://github.com/tinyhttp/favicon/actions
+[gh-actions-img]: https://img.shields.io/github/workflow/status/tinyhttp/favicon/CI?style=for-the-badge&logo=github&label=&color=hotpink
+[cov-img]: https://img.shields.io/coveralls/github/tinyhttp/favicon?style=for-the-badge&color=hotpink
+[cov-url]: https://coveralls.io/github/tinyhttp/favicon
+[npm-img]: https://img.shields.io/npm/dt/@tinyhttp/favicon?style=for-the-badge&color=hotpink
