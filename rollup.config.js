@@ -10,5 +10,5 @@ export default {
     }
   ],
   plugins: [ts()],
-  external: [...Object.keys(dependencies)]
+  external: [...Object.keys(dependencies || {})]
 }
