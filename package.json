@@ -32,7 +32,8 @@
     "build": "tsc -p tsconfig.build.json",
     "prepare": "husky",
     "test": "tsx --test tests/index.test.ts",
-    "test:coverage": "c8 pnpm test"
+    "test:coverage": "c8 --include=src pnpm test",
+    "test:report": "c8 report --reporter=text-lcov > coverage.lcov"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
