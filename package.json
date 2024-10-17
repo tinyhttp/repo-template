@@ -26,34 +26,26 @@
     "dist"
   ],
   "scripts": {
-    "build": "rollup -c",
-    "test": "node --experimental-loader esbuild-node-loader node_modules/uvu/bin.js tests",
-    "test:coverage": "c8 --include=src pnpm test",
-    "test:report": "c8 report --reporter=text-lcov > coverage.lcov",
-    "lint": "eslint . --ext=ts",
-    "format": "prettier --check \"./**/*.{ts,md}\"",
-    "format:fix": "prettier --write \"./**/*.{ts,md}\"",
-    "prepare": "husky install"
+    "lint": "biome lint .",
+    "format": "biome format .",
+    "check": "biome check .",
+    "build": "tsc -p tsconfig.build.json",
+    "prepare": "husky",
+    "test": "tsx --test tests/index.test.ts"
   },
   "devDependencies": {
-    "@commitlint/cli": "13.1.0",
-    "@commitlint/config-conventional": "13.1.0",
-    "@rollup/plugin-typescript": "^8.2.5",
-    "@tinyhttp/app": "2.0.4",
-    "@types/node": "^16.9.2",
-    "@typescript-eslint/eslint-plugin": "^4.31.1",
-    "@typescript-eslint/parser": "^4.31.1",
-    "c8": "^7.9.0",
-    "esbuild-node-loader": "^0.3.1",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "expect": "^27.2.0",
-    "husky": "^7.0.2",
-    "prettier": "^2.4.1",
-    "rollup": "^2.56.3",
-    "supertest-fetch": "^1.4.3",
-    "typescript": "~4.4.3",
-    "uvu": "^0.5.1"
-  }
+    "@biomejs/biome": "^1.9.4",
+    "@commitlint/cli": "19.5.0",
+    "@commitlint/config-conventional": "19.5.0",
+    "@tinyhttp/app": "2.4.0",
+    "@types/node": "^22.7.6",
+    "c8": "^10.1.2",
+    "expect": "^29.7.0",
+    "husky": "^9.1.6",
+    "prettier": "^3.3.3",
+    "supertest-fetch": "^2.0.0",
+    "tsx": "^4.19.1",
+    "typescript": "~5.6.3"
+  },
+  "packageManager": "pnpm@9.10.0+sha512.73a29afa36a0d092ece5271de5177ecbf8318d454ecd701343131b8ebc0c1a91c487da46ab77c8e596d6acf1461e3594ced4becedf8921b074fbd8653ed7051c"
 }

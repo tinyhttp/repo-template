@@ -1,13 +1,15 @@
-name: CI
-
-on: [push]
-
+name: Publish Package to npm
+on:
+  release:
+    types: [published]
 jobs:
-  ci:
+  build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - uses: actions/checkout@v4
-
       - name: Enable corepack
         run: corepack enable pnpm
 
@@ -15,13 +17,16 @@ jobs:
         with:
           cache: "pnpm"
           node-version: 22
-
-      - run: pnpm install --frozen-lockfile
+          registry-url: "https://registry.npmjs.org"
+      - run: pnpm install
+      - run: pnpm build
       - name: Setup Biome
         uses: biomejs/setup-biome@v2
         with:
           version: latest
+
       - name: Run Biome
         run: biome ci .
-      - name: Run tests
-        run: pnpm test
+      - run: pnpm publish --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

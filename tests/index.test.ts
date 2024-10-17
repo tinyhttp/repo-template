@@ -1,15 +1,9 @@
-import { suite } from 'uvu'
-import * as assert from 'uvu/assert'
-import { add } from '../src/index'
+import * as assert from 'node:assert'
+import { describe, it } from 'node:test'
+import { add } from '../src/index.js'
 
-function describe(name: string, fn: (...args: any[]) => void) {
-  const s = suite(name)
-  fn(s)
-  s.run()
-}
-
-describe('add', (it) => {
-  it('adds', () => {
-    assert.equal(add(4, 5), 9)
-  })
+describe('add', () => {
+	it('adds', () => {
+		assert.strictEqual(add(1, 2), 3)
+	})
 })
