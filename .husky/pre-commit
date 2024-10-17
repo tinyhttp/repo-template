@@ -1,4 +1,1 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
-pnpm format && pnpm lint && pnpm build && pnpm test
+pnpm test && pnpm commitlint --config commitlint.config.js --edit "$1"
