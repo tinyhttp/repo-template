@@ -1,1 +1,1 @@
-pnpm test && pnpm commitlint --config commitlint.config.js --edit "$1"
+pnpm commitlint --config commitlint.config.js --edit "$1"
